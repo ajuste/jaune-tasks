@@ -1,18 +1,19 @@
-### jshint node:true ###
-'use strict'
+module.exports = (settingsPath) ->
 
-CONFIG_BUILD_TASKS = "jaune.build_tasks";
+  'use strict'
 
-{Reflection} = require 'jaune-util'
-config       = Reflection.evaluateName '[r(/env.json)]'
-env          = require('jaune-env') config
-setttings    = env.getEnvProperty CONFIG_BUILD_TASKS
-gulp         = require 'gulp'
+  CONFIG_BUILD_TASKS = "jaune.build_tasks";
 
-return unless setttings?
+  {Reflection} = require 'jaune-util'
+  config       = Reflection.evaluateName settingsPath
+  env          = require('jaune-env') config
+  setttings    = env.getEnvProperty CONFIG_BUILD_TASKS
+  gulp         = require 'gulp'
 
-require("./assets")(setttings, task)
+  return unless setttings?
 
-gulp.task 'default', false, []
+  require("./assets")(setttings, task)
 
-module.exports = gulp
+  gulp.task 'default', false, []
+
+  module.exports = gulp

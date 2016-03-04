@@ -1,4 +1,4 @@
-module.exports = (setttings, task) ->
+module.exports = (setttings) ->
 
   'use strict'
 

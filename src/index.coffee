@@ -7,12 +7,12 @@ module.exports = (settingsPath) ->
   {Reflection} = require 'jaune-util'
   config       = Reflection.evaluateName settingsPath
   env          = new (require('jaune-env')) config
-  setttings    = env.getEnvProperty CONFIG_BUILD_TASKS
+  settings     = env.getEnvProperty CONFIG_BUILD_TASKS
   gulp         = require 'gulp'
 
-  return unless setttings?
+  return unless settings?
 
-  require("./assets")(setttings, task)
+  require("./assets") settings
 
   gulp.task 'default', false, []
 

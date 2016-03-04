@@ -6,7 +6,7 @@ module.exports = (settingsPath) ->
 
   {Reflection} = require 'jaune-util'
   config       = Reflection.evaluateName settingsPath
-  env          = require('jaune-env') config
+  env          = new (require('jaune-env')) config
   setttings    = env.getEnvProperty CONFIG_BUILD_TASKS
   gulp         = require 'gulp'
 

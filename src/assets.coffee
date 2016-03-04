@@ -1,18 +1,8 @@
-'use strict'
+module.exports = (setttings, task) ->
 
-require('coffee-script/register');
+  'use strict'
 
-CONFIG_BUILD_TASKS = "jaune.build_tasks";
+  {assets_tasks} = setttings
 
-{Reflection} = require 'jaune-util'
-config       = Reflection.evaluateName '[r(/env.json)]'
-setttings    = config.getEnvProperty CONFIG_BUILD_TASKS
-gulp         = require 'gulp'
-
-return unless setttings?
-
-require("./assets")(setttings, task)
-
-gulp.task 'default', false, []
-
-module.exports = gulp
+  assets_tasks?.each (assetTask) ->
+    require("./#{build.name}") setttings, assetTask

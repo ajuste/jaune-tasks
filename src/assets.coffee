@@ -1,8 +1,8 @@
-module.exports = (setttings) ->
+module.exports = (settings) ->
 
   'use strict'
 
-  {assets_tasks} = setttings
+  {assets_tasks} = settings
 
   assets_tasks?.each (assetTask) ->
-    require("./#{build.name}") setttings, assetTask
+    require("./#{build.name}") settings, assetTask

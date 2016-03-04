@@ -12,8 +12,8 @@ module.exports = (settingsPath) ->
 
   return unless settings?
 
-  require("./assets") settings
+  require("./assets") settings.assets
 
-  gulp.task 'default', false, []
+  gulp.task 'default', false
 
   module.exports = gulp

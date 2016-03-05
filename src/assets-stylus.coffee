@@ -15,4 +15,4 @@ module.exports = (settings, task) ->
               .pipe(stylus use: [nib()], compress: true, 'include css': true)
               .pipe(gulp.dest Reflection.evaluateName(task.destFunction))
 
-  gulp.task 'assets:stylus', 'Compiling stylus files', css
+  gulp.task 'assets:stylus', 'Compiling stylus files', gulpTask

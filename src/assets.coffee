@@ -2,5 +2,9 @@ module.exports = (settings) ->
 
   'use strict'
 
-  settings?.forEach (assetTask) ->
+  return unless settings?
+
+  deps = settings.map (assetTask) ->
     require("./assets-#{assetTask.name}") settings, assetTask
+
+  gulp.task 'assets', deps, false

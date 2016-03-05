@@ -2,6 +2,8 @@ module.exports = (settings, task) ->
 
   'use strict'
 
+  TASK_NAME = 'assets:stylus'
+
   {Reflection} = require 'jaune-util'
 
   gulp   = require 'gulp'
@@ -15,4 +17,6 @@ module.exports = (settings, task) ->
     chain .pipe(stylus use: [nib()], compress: true, 'include css': true)
           .pipe(gulp.dest Reflection.evaluateName(task.destFunction))
 
-  gulp.task 'assets:stylus', 'Compiling stylus files', gulpTask
+  gulp.task TASK_NAME, gulpTask
+
+  TASK_NAME

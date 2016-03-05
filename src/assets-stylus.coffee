@@ -2,7 +2,7 @@ module.exports = (settings, task) ->
 
   'use strict'
 
-  {evaluateName} = require('jaune-util').Reflection
+  {Reflection} = require 'jaune-util'
 
   gulp   = require 'gulp'
   debug  = require 'gulp-debug'
@@ -14,4 +14,4 @@ module.exports = (settings, task) ->
   gulp
   .src  task.sources
   .pipe stylus use: [nib()], compress: true, 'include css': true
-  .pipe gulp.dest evaluateName(task.destFunction)
+  .pipe gulp.dest Reflection.evaluateName(task.destFunction)

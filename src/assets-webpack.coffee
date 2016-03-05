@@ -11,11 +11,11 @@ module.exports = (settings, task) ->
   webpack = require 'gulp-webpack'
   flatten = require 'gulp-flatten'
 
-  options = {}
+  {args}    = task
+  {loaders} = args.module if args?.module?
 
-  if task.loaders?
-    options.module = loaders: task.loaders.map (l) ->
-      loader: l.loader, test: new RegExp l.test
+  if loaders?
+    args.module.loaders = loaders.map (l) -> loader: l.loader, test: new RegExp l.test
 
   {targetDirectory} = task
 
@@ -23,7 +23,7 @@ module.exports = (settings, task) ->
     chain = gulp.src task.sources
     chain = chain.pipe debug title: TASK_NAME  if '-d' in process.argv
     chain = chain.pipe flatten() if task.flatten is yes
-    chain .pipe webpack options
+    chain .pipe webpack args
           .pipe gulp.dest Reflection.evaluateName(task.destFunction)
 
   gulp.task TASK_NAME, gulpTask

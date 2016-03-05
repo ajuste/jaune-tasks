@@ -4,6 +4,7 @@ module.exports = (settings) ->
 
   return unless settings?
 
+  gulp = require 'gulp'
   deps = settings.map (assetTask) ->
     require("./assets-#{assetTask.name}") settings, assetTask
 

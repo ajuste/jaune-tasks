@@ -7,6 +7,7 @@ module.exports = (settings, task) ->
   {Reflection} = require 'jaune-util'
 
   gulp   = require 'gulp'
+  debug  = require 'gulp-debug'
   stylus = require 'gulp-stylus'
   nib    = require 'nib'
 
@@ -14,6 +15,7 @@ module.exports = (settings, task) ->
 
   gulpTask = ->
     chain = gulp.src task.sources
+    chain = chain.pipe debug title: TASK_NAME  if '-d' in process.argv
     chain .pipe(stylus use: [nib()], compress: true, 'include css': true)
           .pipe(gulp.dest Reflection.evaluateName(task.destFunction))
 

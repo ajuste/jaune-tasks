@@ -10,9 +10,9 @@ module.exports = (settings, task) ->
 
   {targetDirectory} = task
 
-  gulpTask =  gulp
-              .src (task.sources)
-              .pipe(stylus use: [nib()], compress: true, 'include css': true)
-              .pipe(gulp.dest Reflection.evaluateName(task.destFunction))
+  gulpTask = ->
+    chain = gulp.src task.sources
+    chain .pipe(stylus use: [nib()], compress: true, 'include css': true)
+          .pipe(gulp.dest Reflection.evaluateName(task.destFunction))
 
-  gulp.task 'assets:stylus', 'Compiling stylus files', -> gulpTask
+  gulp.task 'assets:stylus', 'Compiling stylus files', gulpTask

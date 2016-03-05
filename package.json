@@ -19,6 +19,7 @@
   "homepage": "https://github.com/ajuste/jaune-tasks#readme",
   "dependencies": {
     "gulp": "^3.9.1",
+    "gulp-debug": "^2.1.2",
     "gulp-stylus": "^2.3.0",
     "jaune-env": "0.0.1",
     "jaune-util": "0.0.2",

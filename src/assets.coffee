@@ -2,4 +2,5 @@ module.exports = (settings) ->
 
   'use strict'
 
-  settings?.each (assetTask) -> require("./#{build.name}") settings, assetTask
+  settings?.forEach (assetTask) ->
+    require("./assets-#{assetTask.name}") settings, assetTask

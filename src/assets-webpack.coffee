@@ -8,6 +8,7 @@
  * - entry should always be used to sepecify entry points, even there is only one.
  * - test property of loaders should have same format than new RegExp(<test-prop>)
  *   constructor argument.
+ * You will need to install handlebars-template-loader on your project
 ###
 module.exports = (settings, task) ->
 
@@ -28,7 +29,7 @@ module.exports = (settings, task) ->
 
   # gather sources from entry property
   sources = []
-  sources.push entry[item] for item of entry?
+  sources.push entry[item] for item of entry
 
   # if there are loaders then parse regex
   if loaders?

@@ -24,7 +24,7 @@
     "gulp-stylus": "^2.3.0",
     "gulp-webpack": "^1.5.0",
     "jaune-env": "=0.0.x",
-    "jaune-util": "git+ssh://github.com/ajuste/jaune-util.git#master",
+    "jaune-util": "=0.0.x",
     "nib": "^1.1.0"
   },
   "devDependencies": {

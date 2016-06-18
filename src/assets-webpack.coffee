@@ -26,6 +26,7 @@ module.exports = (settings, task) ->
   {args}    = task
   {entry}   = task
   {loaders} = args.module if args?.module?
+  {plugins} = args.module if args?
 
   # gather sources from entry property
   sources = []
@@ -34,6 +35,9 @@ module.exports = (settings, task) ->
   # if there are loaders then parse regex
   if loaders?
     args.module.loaders = loaders.map (l) -> loader: l.loader, test: new RegExp l.test
+
+  if plugins?
+    args.plugins = plugins.map (l) -> Reflection.evaluateName l
 
   {targetDirectory} = task
 

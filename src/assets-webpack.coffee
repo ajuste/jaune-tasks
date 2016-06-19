@@ -26,7 +26,7 @@ module.exports = (settings, task) ->
   {args}    = task
   {entry}   = task
   {loaders} = args.module if args?.module?
-  {plugins} = args.module if args?
+  {plugins} = args if args?
 
   # gather sources from entry property
   sources = []

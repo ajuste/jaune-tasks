@@ -19,7 +19,7 @@ module.exports = (settings, task) ->
     chain = chain.pipe debug title: TASK_NAME  if '-d' in process.argv
     chain = chain.pipe flatten() if task.flatten is yes
     chain .pipe(stylus use: [nib()], compress: true, 'include css': true)
-          .pipe(gulp.dest Reflection.evaluateName(task.destFunction))
+          .pipe(gulp.dest Reflection.evaluateName(task.destFunction)(task))
 
   gulp.task TASK_NAME, gulpTask
 

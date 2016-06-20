@@ -1,14 +1,6 @@
 ###*
  * @file   gulp-webpack support for jaune.
- * @author - ajuste
- *
- * Configuration for task is the same than specified in:
- * https://www.npmjs.com/package/gulp-webpack except for some exceptions:
- *
- * - entry should always be used to sepecify entry points, even there is only one.
- * - test property of loaders should have same format than new RegExp(<test-prop>)
- *   constructor argument.
- * You will need to install handlebars-template-loader on your project
+ * @author ajuste
 ###
 module.exports = (settings, task) ->
 
@@ -46,7 +38,7 @@ module.exports = (settings, task) ->
     chain = chain.pipe debug title: TASK_NAME  if '-d' in process.argv
     chain = chain.pipe flatten() if task.flatten is yes
     chain .pipe webpack args
-          .pipe gulp.dest Reflection.evaluateName(task.destFunction)
+          .pipe gulp.dest Reflection.evaluateName(task.destFunction)(task)
 
   gulp.task TASK_NAME, gulpTask
 

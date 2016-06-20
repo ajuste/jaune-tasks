@@ -23,7 +23,7 @@
     "gulp-flatten": "^0.2.0",
     "jaune-env": "=0.0.x",
     "jaune-util": "=0.0.x",
-    "nib": "^1.1.0",
+    "nib": "^1.1.0"
   },
   "devDependencies": {
     "coffee-script": "^1.10.0"

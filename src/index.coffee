@@ -14,7 +14,7 @@ module.exports = (settingsPath) ->
 
   for taskName, taskValue of settings
 
-    deps = settings.map (confTask) ->
+    deps = taskValue.map (confTask) ->
       require("./tasks/#{confTask.name}") settings, confTask
 
     gulp.task taskName, deps, false

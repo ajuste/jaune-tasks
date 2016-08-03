@@ -21,4 +21,4 @@ module.exports = (settingsPath) ->
 
   gulp.task 'default', false
 
-  module.exports = gulp
+  gulp

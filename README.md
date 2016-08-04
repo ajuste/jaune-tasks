@@ -100,4 +100,26 @@ The following is an example that outputs two scripts 'page_1_script_name' and 'p
 ```
 
 ### Destination function
-TODO
+Destination function is passed to gulp.dest function. In here you can make transformations to output paths.
+
+In this example we will transform the path to end with '/public/'
+
+```coffee
+PUBLIC_MODULE_PATH = '/public/'
+
+{parse, join} = require 'path'
+
+module.exports =
+
+  webpackDest: (config) ->
+
+    (file) ->
+
+      [path] = file.history
+      parsed = parse path
+
+      unless (originalPath = config.args.entry[parsed.name])
+        throw new Error "File not found in entry point #{originalPath}"
+
+      join originalPath, PUBLIC_MODULE_PATH
+```

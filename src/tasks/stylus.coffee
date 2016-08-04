@@ -6,9 +6,9 @@ module.exports = (settings, task, gulp) ->
 
   {Reflection} = require 'jaune-util'
 
-  debug   = require('gulp-debug') gulp
-  stylus  = require('gulp-stylus') gulp
-  flatten = require('gulp-flatten') gulp
+  debug   = require 'gulp-debug'
+  stylus  = require 'gulp-stylus'
+  flatten = require 'gulp-flatten'
   nib     = require 'nib'
 
   {targetDirectory} = task

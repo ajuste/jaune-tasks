@@ -10,9 +10,9 @@ module.exports = (settings, task, gulp) ->
 
   {Reflection} = require 'jaune-util'
 
-  debug   = require('gulp-debug') gulp
-  webpack = require('gulp-webpack') gulp
-  flatten = require('gulp-flatten') gulp
+  debug   = require 'gulp-debug'
+  webpack = require 'gulp-webpack'
+  flatten = require 'gulp-flatten'
 
   {args}    = task
   {entry}   = task

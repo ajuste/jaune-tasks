@@ -2,7 +2,7 @@
  * @file   gulp-webpack support for jaune.
  * @author ajuste
 ###
-module.exports = (settings, task) ->
+module.exports = (settings, task, gulp) ->
 
   'use strict'
 
@@ -10,10 +10,9 @@ module.exports = (settings, task) ->
 
   {Reflection} = require 'jaune-util'
 
-  gulp    = require 'gulp'
-  debug   = require 'gulp-debug'
-  webpack = require 'gulp-webpack'
-  flatten = require 'gulp-flatten'
+  debug   = require('gulp-debug') gulp
+  webpack = require('gulp-webpack') gulp
+  flatten = require('gulp-flatten') gulp
 
   {args}    = task
   {entry}   = task

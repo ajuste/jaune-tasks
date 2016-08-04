@@ -1,4 +1,4 @@
-module.exports = (settings, task) ->
+module.exports = (settings, task, gulp) ->
 
   'use strict'
 
@@ -6,10 +6,9 @@ module.exports = (settings, task) ->
 
   {Reflection} = require 'jaune-util'
 
-  gulp    = require 'gulp'
-  debug   = require 'gulp-debug'
-  stylus  = require 'gulp-stylus'
-  flatten = require 'gulp-flatten'
+  debug   = require('gulp-debug') gulp
+  stylus  = require('gulp-stylus') gulp
+  flatten = require('gulp-flatten') gulp
   nib     = require 'nib'
 
   {targetDirectory} = task

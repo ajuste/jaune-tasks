@@ -1,11 +1,10 @@
-module.exports = (settings) ->
+module.exports = (settings, gulp) ->
 
   'use strict'
 
   return unless settings?
 
-  gulp = require 'gulp'
   deps = settings.map (assetTask) ->
-    require("./assets-#{assetTask.name}") settings, assetTask
+    require("./assets-#{assetTask.name}") settings, assetTask, gulp
 
   gulp.task 'assets', deps, false

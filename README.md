@@ -7,13 +7,6 @@ Adds gulp tasks support to Jaune.
 npm i -save jaune-tasks
 ```
 
-#Run
-```shell
-gulp <task-name>
-```
-
-You can also specify -d to the command to add debugging information to the output.
-
 # Configuration
 Two steps are required to set up gulp tasks
 

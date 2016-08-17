@@ -28,6 +28,7 @@
     "require-linked-peer": "^0.1.0"
   },
   "devDependencies": {
-    "coffee-script": "^1.10.0"
+    "coffee-script": "^1.10.0",
+    "jaune-tasks": "git+ssh://github.com/ajuste/jaune-tasks.git#master"
   }
 }

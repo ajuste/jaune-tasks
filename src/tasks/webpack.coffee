@@ -6,7 +6,7 @@ module.exports = (settings, task, gulp) ->
 
   'use strict'
 
-  TASK_NAME = 'assets:webpack'
+  TaskName = 'assets:webpack'
 
   {Reflection} = require 'jaune-util'
 
@@ -34,11 +34,11 @@ module.exports = (settings, task, gulp) ->
 
   gulpTask = ->
     chain = gulp.src sources
-    chain = chain.pipe debug title: TASK_NAME  if '-d' in process.argv
+    chain = chain.pipe debug title: TaskName  if '-d' in process.argv
     chain = chain.pipe flatten() if task.flatten is yes
     chain .pipe webpack args
           .pipe gulp.dest Reflection.evaluateName(task.destFunction)(task)
 
-  gulp.task TASK_NAME, gulpTask
+  gulp.task TaskName, gulpTask
 
-  TASK_NAME
+  TaskName

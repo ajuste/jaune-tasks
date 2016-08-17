@@ -27,6 +27,4 @@ module.exports = (settingsPath) ->
 
   gulp.task 'default', false
 
-  console.log {gulp}
-
   gulp

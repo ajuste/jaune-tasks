@@ -48,7 +48,7 @@ You can also specify -d to print debugging information.
 
 ## Uglify
 
-Adds support for [gulp-webpack](https://www.npmjs.com/package/gulp-uglify)
+Adds support for [gulp-uglify](https://www.npmjs.com/package/gulp-uglify)
 
 ### Required packages in your package.json
 
@@ -65,7 +65,7 @@ Adds support for [gulp-webpack](https://www.npmjs.com/package/gulp-uglify)
 ```json
 {
   "name" : "uglify",
-  "destFunction" : "[r(/tasks/app-funcs)].stylusDest",
+  "destFunction" : "[r(/tasks/app-funcs)].destFuncName",
   "sources" : ["modules/**/pages/**/*.js"],
   "flatten" : true
 }
@@ -73,7 +73,7 @@ Adds support for [gulp-webpack](https://www.npmjs.com/package/gulp-uglify)
 
 ## Stylus
 
-Adds support for [gulp-webpack](https://www.npmjs.com/package/gulp-stylus)
+Adds support for [gulp-stylus](https://www.npmjs.com/package/gulp-stylus)
 
 ### Required packages in your package.json
 
@@ -84,14 +84,14 @@ Adds support for [gulp-webpack](https://www.npmjs.com/package/gulp-stylus)
 
 1. **name**: Must be stylus
 2. **destFunction**: Function used to convert output path for script (more ahead)
-3. **args**: Same configuration that explained in [original package](https://www.npmjs.com/package/gulp-webpack) except for some case:
+3. **args**: Same configuration that explained in [original package](https://www.npmjs.com/package/gulp-stylus).
 4. **sources**: Array of paths to be processed
 5. **flatten**: True to use gulp-flatten
 
 ```json
 {
   "name" : "stylus",
-  "destFunction" : "[r(/tasks/app-funcs)].stylusDest",
+  "destFunction" : "[r(/tasks/app-funcs)].destFuncName",
   "sources" : ["modules/**/pages/**/*.styl"],
   "flatten" : true
 }
@@ -124,7 +124,7 @@ The following is an example that outputs two scripts 'page_1_script_name' and 'p
       "assets" : [
         {
           "name" : "webpack",
-          "destFunction" : "[r(/tasks/app-funcs)].webpackDest",
+          "destFunction" : "[r(/tasks/app-funcs)].destFuncName",
           "args" : {
             "plugins": [
               "[r(webpack)].optimize.UglifyJsPlugin.[i()]"

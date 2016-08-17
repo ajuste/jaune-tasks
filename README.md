@@ -132,10 +132,19 @@ The following is an example that outputs two scripts 'page_1_script_name' and 'p
     },
 ```
 
-### Destination function
-Destination function is passed to gulp.dest function. In here you can make transformations to output paths.
+## Destination function
 
-In this example we will transform the path to end with '/public/'
+Destination function is used to generate path of output files with a major flexibility; you can transform output paths using any tool available out there.
+
+In order to set up a destination function we need another function that receives the task as parameter and returns the transforming function. Destination function is specified in the following way inside the task. Please note that destFunction is resolved using [jaune-util reflection](https://github.com/ajuste/jaune-util#reflection).
+
+```json
+{
+  "destFunction" : "[r(/tasks/app-funcs)].webpackDest"
+}
+```
+
+The destination function must accept a file argument which is the same argument passed to gulp.dest. In this example we will transform the path to end with '/public/'
 
 ```coffee
 PUBLIC_MODULE_PATH = '/public/'

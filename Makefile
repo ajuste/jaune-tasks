@@ -10,5 +10,5 @@ usage:
 # Compile Assets
 .PHONY: compile
 compile:
-	rm -r ./lib
+	[ -d ./lib ] && rm -r ./lib || 0
 	@$(COFFEE) --no-header -cbo ./lib ./src

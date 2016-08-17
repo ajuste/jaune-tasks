@@ -1,6 +1,6 @@
 # jaune-tasks
 
-Adds gulp tasks support to Jaune.
+Use gulp tasks only through configuration -- don't code.
 
 # Install
 ```shell

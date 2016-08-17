@@ -46,6 +46,32 @@ You can also specify -d to print debugging information.
 
 # Supported tasks
 
+## Stylus
+
+Adds support for [gulp-webpack](https://www.npmjs.com/package/gulp-stylus)
+
+### Required packages in your package.json
+
+* gulp-stylus
+* nib
+
+### Configuration
+
+1. **name**: Must be stylus
+2. **destFunction**: Function used to convert output path for script (more ahead)
+3. **args**: Same configuration that explained in [original package](https://www.npmjs.com/package/gulp-webpack) except for some case:
+4. **sources**: Array of paths to be processed
+5. **flatten**: True to use gulp-flatten
+
+```json
+{
+  "name" : "stylus",
+  "destFunction" : "[r(/tasks/app-funcs)].stylusDest",
+  "sources" : ["modules/**/pages/**/*.styl"],
+  "flatten" : true
+}
+```
+
 ## Webpack
 
 Adds support for [gulp-webpack](https://www.npmjs.com/package/gulp-webpack)

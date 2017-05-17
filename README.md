@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/ajuste/jaune-tasks.svg?branch=master)](https://travis-ci.org/ajuste/jaune-tasks)
+[![Coverage Status](https://coveralls.io/repos/ajuste/jaune-tasks/badge.svg?branch=master)](https://coveralls.io/r/ajuste/jaune-tasks?branch=master)
+
 # jaune-tasks
 
 Use gulp tasks only through configuration -- don't code.
@@ -115,7 +118,7 @@ Adds support for [gulp-webpack](https://www.npmjs.com/package/gulp-webpack)
   1. **entry** should always be used to sepecify entry points, even there is only one.
   2. **test** property for loaders must be a regular expression.
   3. plugins names must be a [jaune-util reflection reference](https://github.com/ajuste/jaune-util#reflection).
-  
+
 The following is an example that outputs two scripts 'page_1_script_name' and 'page_2_script_name'. Those scripts require handlebars files as template plus we want to minify them:
 
 ```json

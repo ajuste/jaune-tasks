@@ -34,7 +34,7 @@ TaskDoThatThing = (settings, conf, gulp) ->
 
 describe 'exports', ->
 
-  @timeout 5000
+  @timeout 10000
 
   before ->
 
@@ -62,10 +62,11 @@ describe 'exports', ->
     mock.stopAll()
     @gulp = null
 
-  it 'creates gulp on export', ->
+  it 'creates gulp on export', (cb) ->
     @gulp = require('../') SettingsPath
     ok @gulp
     ok @gulp.tasks
+    cb()
 
   it 'contains default task', ->
     ok @gulp.tasks.default

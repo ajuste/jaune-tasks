@@ -25,7 +25,8 @@ module.exports = (settings, task, gulp) ->
 
   # if there are loaders then parse regex
   if loaders?
-    args.module.loaders = loaders.map (l) -> loader: l.loader, test: new RegExp l.test
+    args.module.loaders = loaders.map (l) ->
+      loader: l.loader, test: new RegExp l.test
 
   if plugins?
     args.plugins = plugins.map (l) -> Reflection.evaluateName l

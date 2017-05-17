@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "4.1.2"
+  - "6.10.0"
+  - "7.0.0"
+  - "7.7.1"
+script: npm test
+sudo: false
+after_success: 'npm run cover'

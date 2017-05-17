@@ -34,6 +34,8 @@ TaskDoThatThing = (settings, conf, gulp) ->
 
 describe 'exports', ->
 
+  @timeout 5000
+
   before ->
 
     mock 'jaune-util',

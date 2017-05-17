@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublish": "make compile"
+    "test": "make test",
+    "prepublish": "make compile",
+    "cover": "make cover"
   },
   "repository": {
     "type": "git",
